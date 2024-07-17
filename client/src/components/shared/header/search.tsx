@@ -1,17 +1,17 @@
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select'
-import { getAllCategories } from '@/lib/actions/product.actions'
-import { SearchIcon } from 'lucide-react'
+} from "@/components/ui/select";
+// import { getAllCategories } from '@/lib/actions/product.actions'
+import { SearchIcon } from "lucide-react";
 
 export default async function Search() {
-  const categories = await getAllCategories()
+  // const categories = await getAllCategories()
 
   return (
     <form action="/search" method="GET">
@@ -21,14 +21,14 @@ export default async function Search() {
             <SelectValue placeholder="All" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem key={'All'} value={'all'}>
+            <SelectItem key={"All"} value={"all"}>
               All
             </SelectItem>
-            {categories.map((category: { name: string }) => (
-              <SelectItem key={category.name} value={category.name}>
-                {category.name}
-              </SelectItem>
-            ))}
+            {/* {categories.map((category: { name: string }) => ( */}
+            {/* <SelectItem key={category.name} value={category.name}> */}
+            {/* {category.name} */} category name
+            {/* </SelectItem> */}
+            {/* ))} */}
           </SelectContent>
         </Select>
 
@@ -43,5 +43,5 @@ export default async function Search() {
         </Button>
       </div>
     </form>
-  )
+  );
 }
